@@ -1,0 +1,287 @@
+/*global*/
+
+@font-face{
+
+font-family: 'Roboto';
+
+src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+
+font-weight: normal;
+
+font-style: normal;
+
+}
+body{
+    font-family: 'Roboto' !important ;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+p, a, h2 ,h1, h3{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+/*header-style*/
+.header-logo {
+    font-size: 24px;
+}
+.main-header{
+    background: #65AAF0;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-navigation{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+}
+.main-navigation .nav-url {
+    padding: 25px 40px;
+    font-size: 15px;
+}
+.main-navigation li a{
+    color: white;
+    text-decoration: none;
+}
+.main-navigation li:hover{
+    background: #acd1f7;
+    border-color: #acd1f7;
+}
+.active{
+    border-bottom: 3px solid white;
+}
+.nav-logo a{
+    text-decoration: none;
+    color: white;
+}
+.about{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+}
+.about-text{
+    padding: 15px 0;
+    display: block;
+}
+.about-content{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.btn{
+    display: inline-block;
+    text-transform: uppercase;
+    color:white;
+    font-size: 14px;
+    padding: 10px 35px;
+    background: #444444;
+    border: 2px solid #444444;
+}
+.btn-first{
+    color:black;
+    background: #44444400;
+    border: 2px solid #444444;
+}
+/* .main-navigation li a:hover{
+    color: rgb(170, 170, 170);
+} */
+
+
+/*last-tournament block*/
+.last-tournament{
+    border-top: 1px solid rgba(182, 182, 182, 0.527);
+}
+.tournament-header{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    font-size: 36px;
+    text-align: center;
+}
+.tournament-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.tournament-block{
+    width: 30%;
+    padding: 20px;
+}
+.block-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+.block-text{
+    text-align: center;
+    color: #666666;
+    margin-top: 15px;
+}
+/*=====================*/
+.about-tournament-wrap{
+    position: relative;
+    display: flex;
+    padding: 100px 0;
+}
+.about-tournament{
+    background: #ebebeb;
+}
+.about-tournament-block-left{
+    width: 50%;
+    font-size: 15px;    
+}
+.about-tournament-block-left h3{
+    width: 50%;
+    font-size: 20px;
+}
+.about-tournament-block-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url(../img/programming.png);
+}
+
+/*gallery*/
+.gallery-wrap{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery-header{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 30px;
+}
+.gallery-block{
+    position: relative;
+    width: 33%;
+    padding: 30px 10px;
+}
+.image-desc{
+    display: none;
+    background: #77717100;
+    transition: 1s linear;
+}
+.gallery-block:hover .image-desc{
+    display: block;
+    position: absolute;
+    margin-top: 30px;
+    top: 10%;
+    left: 20%;
+    z-index: 9999;
+    width: 60%;
+
+    color: white;
+    background: #777171ea;
+    transition: 1s linear;
+    border-radius: 10px;
+
+
+}
+
+/*teacher*/
+.teacher-header{
+    padding-top: 50px;
+    text-align: center;
+}
+.teacher-header h3 {
+    font-size: 30px;
+}
+.teacher{
+    background: #acd1f7;
+}
+.teacher-wrap{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.teacher-wrap .teacher-block{
+    padding: 20px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.teacher-wrap .teacher-desc{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    display: none;
+}
+.teacher-wrap .teacher-desc p{
+    text-align: center;
+    padding: 10px;
+}
+.teacher-wrap .teacher-name{
+    padding: 15px 0;
+}
+.teacher-wrap .teacher-img img{
+    width: 150px;
+    height: 150px;
+    background-position: center;
+
+    border: 3px solid rgb(252, 194, 194);
+    border-radius: 160px 160px 160px 160px;
+    -webkit-border-radius: 160px 160px 160px 160px;
+    -moz-border-radius: 160px 160px 160px 160px;
+}
+.teacher-img:hover .teacher-desc{
+    background: red;
+    
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 15%;
+    
+}
+/* footer */
+.main-footer{
+    background: #272727;
+    color: white;
+}
+.footer-wrap{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-info{
+    padding: 15px 0;
+}
+.footer-info-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footer-info .footer-info-nav li a{
+    text-decoration: none;
+    color: white;
+}
+.footer-info .footer-info-nav li a:hover{
+    color: rgb(170, 170, 170);
+}
+
