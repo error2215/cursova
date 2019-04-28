@@ -11,7 +11,8 @@ $this->title = 'Турнір юних інформатиків';
     <main class="main">
         <section class='parent'>
   <div class='slider'>
-   <a class="source source-1" id='rightBtn'><button type="button" id='right' class='right ' name="button">
+   <a class="source source-2" id='rightBtn'>
+    <button type="button" id='right' class='right ' name="button">
 
        <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
@@ -24,9 +25,9 @@ $this->title = 'Турнір юних інформатиків';
        </svg>
 
        </button>
-      </a>
-      <a class="source source-1" id='leftBtn'>
-  <button type="button" id='left' class='left' name="button">
+  </a>
+  <a class="source source-4" id='leftBtn'>
+    <button type="button" id='left' class='left' name="button">
     
        <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
@@ -35,8 +36,8 @@ $this->title = 'Турнір юних інформатиків';
           c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
        </g>
        </svg>
-       </button>
-    </a>
+    </button>
+  </a>
    <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20"  />
       <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100"  />
