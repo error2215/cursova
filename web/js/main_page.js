@@ -208,7 +208,7 @@ function extractId(targetNode, baseClass) {
 			return maybeIdNum
 		}
 	}
-}
+}	
 
 function showTarget(targets, targetId) {
 	targets.forEach(function (targetNode, targetIndex) {

@@ -11,6 +11,7 @@ use app\models\LoginForm;
 use app\models\Instructors;
 use app\models\Images;
 use app\models\Tournaments;
+use app\models\GalleryCategories;
 
 class SiteController extends Controller
 {
@@ -64,21 +65,25 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $images = Images::find()
-        ->indexBy('id')
+        ->orderBy(['priority' => SORT_ASC])
         ->all();
 
         $instructors = Instructors::find()
-        ->indexBy('id')
         ->all();
 
         $tournaments = Tournaments::find()
-        ->indexBy('id')
+        ->orderBy(['priority' => SORT_ASC])
+        ->all();
+
+        $galleryCategories = GalleryCategories::find()
+        ->orderBy(['priority' => SORT_ASC])
         ->all();
 
         return $this->render('index', [
             'images' => $images,
             'instructors' => $instructors,
-            'tournaments' => $tournaments
+            'tournaments' => $tournaments,
+            'galleryCategories' => $galleryCategories,
         ]);
     }
 

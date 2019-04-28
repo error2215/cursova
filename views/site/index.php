@@ -1,10 +1,15 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\Assets\GalleryAsset;
+
 /* @var $this yii\web\View */
 /* @var $images images */
 /* @var $instructors instructors */
+
 $this->registerJsFile('@web/js/main_page.js');
+GalleryAsset::register($this);
+
 $this->title = 'Турнір юних інформатиків';
 ?>
     
@@ -60,10 +65,18 @@ $this->title = 'Турнір юних інформатиків';
       <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580"  />
       <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660"  />
     </svg>
-      <div id='slide1' class='slide1 up1'>XVII  Всеукраїнський  турнір  юних  інформатиків</div>
-      <div id='slide2' class='slide2'>XVI  Всеукраїнський  турнір  юних  інформатиків</div>
-      <div id='slide3' class='slide3'>XV Всеукраїнський  турнір  юних  інформатиків</div>
-      <div id='slide4' class='slide4'>XIV  Всеукраїнський  турнір  юних  інформатиків</div>
+      <?php
+        $slideNumber = 1;
+        foreach ($tournaments as $tournament) {
+
+          echo "<div id='slide" . $slideNumber . "' class='slide" . $slideNumber;
+          echo $slideNumber == 1 ? " up1'" : "'" ; 
+          echo " style=\"background-image: url('/img/" . $tournament->image . "')\">";
+          echo $tournament->header . "</div>";
+          $slideNumber++;
+
+        }
+      ?>
   </div>
 </section>
         <section class="about">
@@ -81,7 +94,8 @@ $this->title = 'Турнір юних інформатиків';
 
         <?php
 
-        foreach ($tournaments as $tournament) {
+        foreach ($tournaments as $tournament) :
+        
           echo '<section class="last-tournament target target-' . $tournament->id .'">';
             echo '<div class="container">';
               echo '<div class="tournament-header"><p>' . $tournament->header .'</p></div>';
@@ -100,41 +114,9 @@ $this->title = 'Турнір юних інформатиків';
                 echo "</div>";
               echo "</div>";
             echo "</div>";
-          echo "</section>";
-        }
 
          ?>
-        <!-- <section class="last-tournament">
-            <div class="container">
-                    <div class="tournament-header"><p>XVIII  Всеукраїнський  турнір  юних  інформатиків</p></div>
-                <div class="tournament-wrap">
-                    <div class="tournament-block">
-                        <div class="block-title">
-                            Ужгород, вул. Тлехаса 91
-                        </div>
-                        <div class="block-text">
-                            Місце проведення
-                        </div>
-                    </div>
-                    <div class="tournament-block">
-                        <div class="block-title">
-                            УжНУ
-                        </div>
-                        <div class="block-text">
-                            Спонсори
-                        </div>
-                    </div>
-                    <div class="tournament-block">
-                        <div class="block-title">
-                            1 - 5 листопада 2019 року   
-                        </div>
-                        <div class="block-text">
-                            Дата проведення
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <section class="about-tournament">
             <div class="container">
                 <div class="about-tournament-wrap">
@@ -145,24 +127,29 @@ $this->title = 'Турнір юних інформатиків';
                     <div class="about-tournament-block-right"></div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
 
-        <!-- <section class="gallery">
-            <div class="container">
-                <h3 class="gallery-header">Галерея</h3>
-                <div class="gallery-wrap"> -->
-                  <?php /*
-                     foreach ($images as $image) {
-                      echo '<div class="gallery-block">';
-                        echo Html::img('@web/img/'. $image->source, ['alt'=>'some', 'style'=> ['width' => '350px', 'height' => '200px']]);
-                        echo '<div class="image-desc"><p>' . $image->description . '</p></div>';
-                      echo '</div>'; 
-                    } */
-                  ?>
-                <!-- </div>
-            </div>
-        </section> -->
+        <div class="gallery" id="gallery">
+          <?php
+
+            foreach ($galleryCategories as $category) {
+              if ($category->tournament == $tournament->name){
+                echo '<div class="gallery-item" style="grid-row-end: span 14;">';
+                  echo '<div class="content">';
+                  echo Html::a(Html::img('@web/img/'. $category->name . '/main_image.jpg'),['gallery/gallery', 'category' => $category->name]);
+                  echo '<div class="category-name">' . $category->header .  '</div>';
+                  echo '</div>';
+                echo '</div>';
+              }
+            }
+            
+            echo "</section>";
+
+          endforeach;
+          ?>
+        </div>
+
         <!-- <section class="teacher">
             <div class="container">
                 <div class="teacher-header"><h3>Викладачі, жюрі, наставники</h3></div>
