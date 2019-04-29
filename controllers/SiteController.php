@@ -12,6 +12,7 @@ use app\models\Instructors;
 use app\models\Images;
 use app\models\Tournaments;
 use app\models\GalleryCategories;
+use app\models\ContactForm;
 
 class SiteController extends Controller
 {
@@ -126,15 +127,15 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionContacts()
+    public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['emailTo'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
         }
-        return $this->render('contacts', [
+        return $this->render('contact', [
             'model' => $model,
         ]);
     }

@@ -168,13 +168,14 @@ p, a, h2 ,h1, h3{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+}*/
 .gallery-header{
-    margin-top: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 30px;
 }
-.gallery-block{
+/*.gallery-block{
     position: relative;
     width: 33%;
     padding: 30px 10px;

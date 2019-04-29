@@ -129,12 +129,12 @@ $this->title = 'Турнір юних інформатиків';
             </div>
         </section>
 
-
+        <h1 class="gallery-header">Галерея турніру</h1>
         <div class="gallery" id="gallery">
           <?php
 
             foreach ($galleryCategories as $category) {
-              if ($category->tournament == $tournament->name){
+              if ($category->tournament == $tournament->name || $category->name == 'instructors'){
                 echo '<div class="gallery-item" style="grid-row-end: span 14;">';
                   echo '<div class="content">';
                   echo Html::a(Html::img('@web/img/'. $category->name . '/main_image.jpg'),['gallery/gallery', 'category' => $category->name]);

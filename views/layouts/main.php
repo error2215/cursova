@@ -16,7 +16,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= 'ua_UK' ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@ AppAsset::register($this);
                     ['label' => 'Галарея', 'url' => ['gallery/categories']],
                     ['label' => 'Правила', 'url' => ['site/services']],
                     ['label' => 'Роботи учасників', 'url' => ['site/contacts']],
-                    ['label' => 'Контакти', 'url' => ['site/contacts']],
+                    ['label' => 'Контакти', 'url' => ['site/contact']],
                 ],
                 'options' => [
                     'class' => 'main-navigation',

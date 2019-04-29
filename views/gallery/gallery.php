@@ -14,7 +14,7 @@ GalleryAsset::register($this);
 $this->title = $title;
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1><?= $title ?></h1>
+<h1 class="gallery-header"><?= $title ?></h1>
 
     <div class="gallery" id="gallery"  style="grid-row-gap: 8px;">
     	<?php

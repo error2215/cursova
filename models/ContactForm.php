@@ -28,7 +28,7 @@ class ContactForm extends Model
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            ['verifyCode', 'captcha', 'captchaAction'=>'site/captcha'],
         ];
     }
 
@@ -38,7 +38,11 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'verifyCode' => 'Введіть код',
+            'name' => 'Ім\'я',
+            'email' => 'Електронний адрес',
+            'subject' => 'Тема',
+            'body' => 'Повідомлення',
         ];
     }
 
@@ -47,14 +51,14 @@ class ContactForm extends Model
      * @param string $email the target email address
      * @return bool whether the model passes validation
      */
-    public function contact($email)
+    public function contact($emailTo)
     {
         if ($this->validate()) {
             Yii::$app->mailer->compose()
-                ->setTo($email)
+                ->setTo($emailTo)
                 ->setFrom([$this->email => $this->name])
                 ->setSubject($this->subject)
-                ->setTextBody($this->body)
+                ->setTextBody('E-mail: ' . $this->email . ', текст повідомлення: ' . $this->body)
                 ->send();
 
             return true;
