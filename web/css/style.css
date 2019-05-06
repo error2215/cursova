@@ -286,3 +286,21 @@ p, a, h2 ,h1, h3{
     color: rgb(170, 170, 170);
 }
 
+
+
+
+
+
+/* rules  */
+.rules-header {
+    text-align: center;
+    margin-top: 10px;
+}
+.rules-content {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+} 

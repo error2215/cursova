@@ -145,8 +145,8 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
+    public function actionRules()
     {
-        return $this->render('about');
+        return $this->render('rules');
     }
 }

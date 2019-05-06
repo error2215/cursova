@@ -37,7 +37,7 @@ AppAsset::register($this);
                 'items' => [
                     ['label' => 'Головна', 'url' => ['site/index']],
                     ['label' => 'Галарея', 'url' => ['gallery/categories']],
-                    ['label' => 'Правила', 'url' => ['site/services']],
+                    ['label' => 'Правила', 'url' => ['site/rules']],
                     ['label' => 'Роботи учасників', 'url' => ['site/contacts']],
                     ['label' => 'Контакти', 'url' => ['site/contact']],
                 ],
