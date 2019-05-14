@@ -131,7 +131,8 @@ $this->title = 'Турнір юних інформатиків';
                 </div>
             </div>
         </section>
-
+        <section>
+        <div class="container">
         <h1 class="gallery-header">Галерея турніру</h1>
         <div class="gallery" id="gallery">
           <?php
@@ -152,7 +153,8 @@ $this->title = 'Турнір юних інформатиків';
           endforeach;
           ?>
         </div>
-
+        </div>
+        </section>
         <!-- <section class="teacher">
             <div class="container">
                 <div class="teacher-header"><h3>Викладачі, жюрі, наставники</h3></div>

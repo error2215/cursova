@@ -13,6 +13,7 @@ GalleryAsset::register($this);
 $this->title = 'Галерея';
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="container">
 <h1>Галерея</h1>
 
     <div class="gallery" id="gallery">
@@ -27,5 +28,5 @@ $this->title = 'Галерея';
        	}
     	?>
     </div>
-
+</div>
 
