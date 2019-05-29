@@ -12,45 +12,55 @@ $this->title = 'Контакти';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
-        <div class="alert alert-success">
-            Дякую за звернення. Ми зробимо все можливе, щоб відповісти як можна скоріше.
-        </div>
-
+    <div class="alert alert-success">
+        Дякую за звернення. Ми зробимо все можливе, щоб відповісти як можна скоріше.
+    </div>
     <?php else: ?>
-
-        <p>
-            Ви можете написати лист і ми спробуємо зв'язатися в найближчий час.
-        </p>
-
-        <div class="row">
-            <div class="col-lg-5">
-
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h1 class="text-center" style="padding: 20px; font-size: 24px"><?= Html::encode($this->title) ?></h1>
+            <p style="font-size: 16px">
+                Ви можете написати лист і ми спробуємо зв'язатися в найближчий час.
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-wrap">
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'name')->textInput(['autofocus' => true, 'class' => 'form-control input-class']) ?>
 
-                    <?= $form->field($model, 'email') ?>
+                <?= $form->field($model, 'email') ->textInput(['class' => 'form-control input-class'])?>
 
-                    <?= $form->field($model, 'subject') ?>
+                <?= $form->field($model, 'subject') ->textInput(['class' => 'form-control input-class'])?>
 
-                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                        'template' => '
+                        <div class="row">
+                        <div class="col-lg-3">
+                        {image}
+                        </div>
+                        <div class="col-lg-3 align-middle">
+                        {input}
+                        
+                        </div>
+                        </div>',
+                        'options' => ['class' => 'input-custom']
                     ]) ?>
 
-                    <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                    </div>
+                <div class="form-group">
+                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                </div>
 
                 <?php ActiveForm::end(); ?>
-
             </div>
         </div>
+    </div>
 
     <?php endif; ?>
 </div>

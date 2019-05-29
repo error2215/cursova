@@ -5,23 +5,23 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "gallery_images".
+ * This is the model class for table "gallery_categories".
  *
  * @property int $id
  * @property string $name
- * @property string $source
- * @property string $description
- * @property string $category
+ * @property string $header
+ * @property string $tournament
  * @property int $priority
+ * @property string $description
  */
-class Images extends \yii\db\ActiveRecord
+class Categories extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'gallery_images';
+        return 'gallery_categories';
     }
 
     /**
@@ -30,10 +30,9 @@ class Images extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'source', 'description', 'category', 'priority'], 'required'],
+            [['name', 'header', 'tournament', 'description'], 'required'],
             [['priority'], 'integer'],
-            [['name', 'source', 'description', 'category'], 'string', 'max' => 255],
-            
+            [['name', 'header', 'tournament', 'description'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,10 +44,10 @@ class Images extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'source' => 'Source',
-            'description' => 'Description',
-            'category' => 'Category',
+            'header' => 'Header',
+            'tournament' => 'Tournament',
             'priority' => 'Priority',
+            'description' => 'Description',
         ];
     }
 }

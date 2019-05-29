@@ -8,12 +8,12 @@ use app\Assets\GalleryAsset;
 /* @var $instructors instructors */
 
 $this->registerJsFile('@web/js/main_page.js');
-GalleryAsset::register($this);
 
 $this->title = 'Турнір юних інформатиків';
 ?>
   <div class="rules-header">
     <h1>Правила проведення Всеукраїнського турніру юних інформатиків</h1>
+    <br>
     <h2> Загальні положення про Турнір Юних Інформатиків </h2>
   </div>
 <div class="rules-content">

@@ -23,7 +23,7 @@ svg {
   height: 500px;
 }
 
-button {
+.btn-slider {
   position: absolute;
   z-index: 50;
   width: 40px;
@@ -37,7 +37,7 @@ button {
   -moz-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
 }
-button:focus {
+.btn-slider:focus {
   outline-width: 0;
 }
 
@@ -57,7 +57,6 @@ circle {
 
 #Capa_1 {
   position: absolute;
-  left: 150px;
   width: 16px;
   height: 16px;
   transform: translate(-7px, -8px);

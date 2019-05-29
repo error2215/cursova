@@ -12,6 +12,10 @@ var resizeAll = function () {
 window.addEventListener('resize', resizeAll);
 gallery.querySelectorAll('.gallery-item').forEach(function (item) {
     item.addEventListener('click', function () {        
-        item.classList.toggle('full');        
+        item.classList.toggle('full');
+
+        item.childNodes[1].childNodes[1].classList.toggle('image-wrap');
     });
 });
+
+

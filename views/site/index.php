@@ -8,6 +8,7 @@ use app\Assets\GalleryAsset;
 /* @var $instructors instructors */
 
 $this->registerJsFile('@web/js/main_page.js');
+$this->registerCssFile('@web/css/slider.css');
 GalleryAsset::register($this);
 
 $this->title = 'Турнір юних інформатиків';
@@ -17,7 +18,7 @@ $this->title = 'Турнір юних інформатиків';
         <section class='parent'>
   <div class='slider'>
    <a class="source source-2" id='rightBtn'>
-    <button type="button" id='right' class='right ' name="button">
+    <button type="button" id='right' class='btn-slider right ' name="button">
 
        <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
@@ -32,7 +33,7 @@ $this->title = 'Турнір юних інформатиків';
        </button>
   </a>
   <a class="source source-4" id='leftBtn'>
-    <button type="button" id='left' class='left' name="button">
+    <button type="button" id='left' class='btn-slider left' name="button">
     
        <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
@@ -44,27 +45,28 @@ $this->title = 'Турнір юних інформатиків';
     </button>
   </a>
    <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20"  />
-      <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100"  />
-      <circle id='circle3' class='circle3 steap' cx="34px" cy="49%" r="180"  />
-      <circle id='circle4' class='circle4 steap' cx="34px" cy="49%" r="260"  />
-      <circle id='circle5' class='circle5 steap' cx="34px" cy="49%" r="340"  />
-      <circle id='circle6' class='circle6 steap' cx="34px" cy="49%" r="420"  />
-      <circle id='circle7' class='circle7 steap' cx="34px" cy="49%" r="500"  />
-      <circle id='circle8' class='circle8 steap' cx="34px" cy="49%" r="580"  />
-      <circle id='circle9' class='circle9 steap' cx="34px" cy="49%" r="660"  />
-    </svg>
-   <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <circle id='circle10' class='circle10 steap' cx="648px" cy="49%" r="20"  />
-      <circle id='circle11' class='circle11 steap' cx="648px" cy="49%" r="100"  />
-      <circle id='circle12' class='circle12 steap' cx="648px" cy="49%" r="180"  />
-      <circle id='circle13' class='circle13 steap' cx="648px" cy="49%" r="260"  />
-      <circle id='circle14' class='circle14 steap' cx="648px" cy="49%" r="340"  />
-      <circle id='circle15' class='circle15 steap' cx="648px" cy="49%" r="420"  />
-      <circle id='circle16' class='circle16 steap' cx="648px" cy="49%" r="500"  />
-      <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580"  />
-      <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660"  />
-    </svg>
+      <circle id='circle1' class='circle1 steap' cx="1.25%" cy="49%" r="20" />
+      <circle id='circle2' class='circle2 steap' cx="1.25%" cy="49%" r="100" />
+      <circle id='circle3' class='circle3 steap' cx="1.25%" cy="49%" r="180" />
+      <circle id='circle4' class='circle4 steap' cx="1.25%" cy="49%" r="260" />
+      <circle id='circle5' class='circle5 steap' cx="1.25%" cy="49%" r="340" />
+      <circle id='circle6' class='circle6 steap' cx="1.25%" cy="49%" r="420" />
+      <circle id='circle7' class='circle7 steap' cx="1.25%" cy="49%" r="500" />
+      <circle id='circle8' class='circle8 steap' cx="1.25%" cy="49%" r="580" />
+      <circle id='circle9' class='circle9 steap' cx="1.25%" cy="49%" r="660" />
+  </svg>
+  <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <circle id='circle10' class='circle10 steap' cx="23.23%" cy="49%" r="20" />
+      <circle id='circle11' class='circle11 steap' cx="23.23%" cy="49%" r="100" />
+      <circle id='circle12' class='circle12 steap' cx="23.23%" cy="49%" r="180" />
+      <circle id='circle13' class='circle13 steap' cx="23.23%" cy="49%" r="260" />
+      <circle id='circle14' class='circle14 steap' cx="23.23%" cy="49%" r="340" />
+      <circle id='circle15' class='circle15 steap' cx="23.23%" cy="49%" r="420" />
+      <circle id='circle16' class='circle16 steap' cx="23.23%" cy="49%" r="500" />
+      <circle id='circle17' class='circle17 steap' cx="23.23%" cy="49%" r="580" />
+      <circle id='circle18' class='circle18 steap' cx="23.23%" cy="49%" r="660" />
+  </svg>
       <?php
         $slideNumber = 1;
         foreach ($tournaments as $tournament) {
@@ -79,7 +81,7 @@ $this->title = 'Турнір юних інформатиків';
       ?>
   </div>
 </section>
-        <section class="about">
+        <!-- <section class="about">
             <div class="container">
                 <h3 class="about-text">
                     QUAERAT QUOD VOLUPTATE CONSEQUUNTUR
@@ -90,7 +92,7 @@ $this->title = 'Турнір юних інформатиків';
                 <a href="" class="btn btn-first">Learn MORE</a>
                 <a href="" class="btn">Download</a>
             </div>
-        </section>
+        </section> -->
 
         <?php
 
@@ -141,41 +143,18 @@ $this->title = 'Турнір юних інформатиків';
               if ($category->tournament == $tournament->name || $category->name == 'instructors'){
                 echo '<div class="gallery-item" style="grid-row-end: span 14;">';
                   echo '<div class="content">';
-                  echo Html::a(Html::img('@web/img/'. $category->name . '/main_image.jpg'),['gallery/gallery', 'category' => $category->name]);
+                  echo Html::a(Html::img('@web/img/'. $category->name . '/main_image.jpg'),['site/gallery', 'category' => $category->name]);
                   echo '<div class="category-name">' . $category->header .  '</div>';
                   echo '</div>';
                 echo '</div>';
               }
             }
-            
-            echo "</section>";
-
+            ?>
+            </section>
+          </section>
+          <?php
           endforeach;
           ?>
         </div>
         </div>
-        </section>
-        <!-- <section class="teacher">
-            <div class="container">
-                <div class="teacher-header"><h3>Викладачі, жюрі, наставники</h3></div>
-                <div class="teacher-wrap"> -->
-                  <?php  /*
-                    foreach ($instructors as $instructor) {
-                      echo '<div class="teacher-block">';
-                        echo '<div class="teacher-img">';
-                          echo Html::img('@web/img/' . $instructor->img_source);
-                          echo '<div class="teacher-desc"><p>' . $instructor->description . '</p></div>';
-                        echo '</div>';
-                        echo '<div class="teacher-name">';
-                          echo '<p>'. $instructor->full_name . '</p>';
-                        echo '</div>';
-                        echo '<div class="teacher-university">';
-                          echo '<p>' . $instructor->university . '</p>';
-                        echo '</div>';
-                      echo "</div>";
-                    } */
-                  ?>
-                <!-- </div>
-            </div>
-        </section> -->
     </main>

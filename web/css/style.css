@@ -11,10 +11,21 @@ font-weight: normal;
 font-style: normal;
 
 }
+html{
+    height: 100%;
+}
 body{
     font-family: 'Roboto' !important ;
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+     flex: 1 0 auto;
 }
 ul{
     list-style: none;
@@ -33,8 +44,9 @@ p, a, h2 ,h1, h3{
 }
 
 /*header-style*/
-.header-logo {
+.nav-logo .header-logo {
     font-size: 24px;
+    text-decoration: none !important;
 }
 .main-header{
     background: #65AAF0;
@@ -52,12 +64,13 @@ p, a, h2 ,h1, h3{
     margin: 0px;
 }
 .main-navigation .nav-url {
-    padding: 25px 40px;
-    font-size: 15px;
+    font-size: 16px;
 }
 .main-navigation li a{
     color: white;
     text-decoration: none;
+    display: block;
+    padding: 25px 40px;
 }
 .main-navigation li:hover{
     background: #acd1f7;
@@ -163,6 +176,17 @@ p, a, h2 ,h1, h3{
 }
 
 /*gallery*/
+.galery{
+    padding: 40px 0 20px 0;
+    height: 100%;
+}
+.galery-wrap h1{
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.galery-wrap{
+    background: white;
+}
 /*.gallery-wrap{
     margin-top: 50px;
     display: flex;
@@ -263,16 +287,17 @@ p, a, h2 ,h1, h3{
 .main-footer{
     background: #272727;
     color: white;
+     flex: 0 0 auto;
+    /*margin-top: 100px;*/
 }
 .footer-wrap{
-    padding-top: 20px;
-    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 .footer-info{
-    padding: 15px 0;
-}
+    width: 80%;
+    margin: 0 auto;
+ }
 .footer-info-nav{
     display: flex;
     flex-direction: row;
@@ -281,6 +306,8 @@ p, a, h2 ,h1, h3{
 .footer-info .footer-info-nav li a{
     text-decoration: none;
     color: white;
+    display: block;
+    padding: 15px 25px;
 }
 .footer-info .footer-info-nav li a:hover{
     color: rgb(170, 170, 170);
@@ -296,6 +323,10 @@ p, a, h2 ,h1, h3{
     text-align: center;
     margin-top: 10px;
 }
+.rules-subheader{
+    text-align: center;
+    font-weight: bold;
+}
 .rules-content {
     font-size: 14px;
     margin-top: 10px;
@@ -303,4 +334,15 @@ p, a, h2 ,h1, h3{
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    line-height: 25px;
+
 } 
+.input-class{
+    height: 35px !important;
+}
+.form-wrap{
+    padding-bottom: 50px;
+}
+.input-custom{
+    margin: 12px 0;
+}

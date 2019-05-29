@@ -8,12 +8,11 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\Instructors;
 use app\models\Images;
 use app\models\Tournaments;
-use app\models\GalleryCategories;
+use app\models\Categories;
 use app\models\ContactForm;
-
+use app\models\Works;
 class SiteController extends Controller
 {
     /**
@@ -36,7 +35,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    // 'logout' => ['post'],
                 ],
             ],
         ];
@@ -69,14 +68,11 @@ class SiteController extends Controller
         ->orderBy(['priority' => SORT_ASC])
         ->all();
 
-        $instructors = Instructors::find()
-        ->all();
-
         $tournaments = Tournaments::find()
         ->orderBy(['priority' => SORT_ASC])
         ->all();
 
-        $galleryCategories = GalleryCategories::find()
+        $galleryCategories = Categories::find()
         ->orderBy(['priority' => SORT_ASC])
         ->all();
 
@@ -148,5 +144,67 @@ class SiteController extends Controller
     public function actionRules()
     {
         return $this->render('rules');
+    }
+
+    public function actionCategories()
+    {
+        $categories = Categories::find()
+        ->indexBy('id')
+        ->all();
+        return $this->render('categories', [
+            'categories' => $categories,
+        ]);
+    }   
+    public function actionGallery()
+    {
+        $request = Yii::$app->request;
+
+        $images = Images::find()
+        ->where(['category' => $request->get('category')])
+        ->indexBy('id')
+        ->all();
+
+        $title = Categories::find()
+        ->where(['name' => $request->get('category')])
+        ->select('header')->all();
+
+        return $this->render('gallery', [
+            'images' => $images,
+            'title' => $title[0]['header']
+        ]);
+    }
+
+    public function actionWorks()
+    {
+        $tournaments = Tournaments::find()
+        ->indexBy('id')
+        ->all();
+        $works = Works::find()
+        ->indexBy('id')
+        ->all();
+        return $this->render('works', [
+            'tournaments' => $tournaments,
+            'works' => $works
+        ]);
+    }
+    public function actionLoad()
+    {
+        $request = Yii::$app->request;
+
+        $id = $request->get('id');
+        $model = Works::find()
+                ->where(['link' => $id])
+                ->all();
+        $files1 = scandir('teamsWorks');
+        foreach ($files1 as $key => $value) {
+
+            if (substr_count($value, $model[0]->link . '.')  == 1){
+                $file = $value;
+                break;
+            }
+        }
+        return $this->render('load', [
+            'file' => $file
+        ]);
     }
 }
